@@ -10,6 +10,8 @@ $buku = query("SELECT * FROM buku");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Katalog Buku</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-danger-subtle">
@@ -21,7 +23,7 @@ $buku = query("SELECT * FROM buku");
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Tambah Buku</a>
+            <a class="nav-link active" aria-current="page" href="tambah.php">Tambah Buku</a>
             </li>
         </ul>
         </div>
@@ -49,8 +51,8 @@ $buku = query("SELECT * FROM buku");
                                 <h5 class="card-title"><?= $b['judul'] ?></h5>
                                 <p class="card-text"><small class="text-muted"><?= $b['penulis'] ?> | <?= $b['penerbit'] ?></small></p>
 
-                                <a href="" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="ubah.php?id=<?= $b['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="hapus.php?id=<?= $b['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
                             </div>
                             </div>
                         </div>
